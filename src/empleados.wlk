@@ -25,16 +25,22 @@ object galvan {
 }
 
 object baigorria {
+	const sueldoPorEmpanada = 15
 	var cantidadDeEmpanadasVendidas = 0
+	var sueldoTotalCobrado = 0
 	
 	method sueldoActual(){
-		return cantidadDeEmpanadasVendidas * 15
-	}
+		return cantidadDeEmpanadasVendidas * sueldoPorEmpanada
+		}
 	
 	method vender_Empanadas(cantidad){
-		cantidadDeEmpanadasVendidas = cantidadDeEmpanadasVendidas + cantidad
+		cantidadDeEmpanadasVendidas = cantidad
+		sueldoTotalCobrado = sueldoTotalCobrado + cantidad * sueldoPorEmpanada
 	}
 	
+	method totalCobrado(){
+		return sueldoTotalCobrado
+	}
 	
 }
 
